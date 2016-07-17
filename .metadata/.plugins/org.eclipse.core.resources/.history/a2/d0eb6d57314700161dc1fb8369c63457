@@ -1,0 +1,28 @@
+package learn_java;
+
+import java.util.Scanner;
+
+public class Prisoner_problem {
+	public static void main(String[] args) {
+		Scanner reader = new Scanner(System.in);
+        int T = reader.nextInt();
+        int N = reader.nextInt();
+        int M = reader.nextInt();
+        int S = reader.nextInt();
+        int key=0;
+        
+        while(T >= 1){
+        	int M_temp = M;
+        	int S_temp = S;
+        	int N_temp = N;
+            while(M_temp > 0){
+                if (S_temp >= N_temp)
+                	S_temp = S_temp % N_temp;
+                M_temp--;
+                S_temp++;
+            }
+            System.out.println(S_temp-1);
+            T--;
+        }	
+	}
+}

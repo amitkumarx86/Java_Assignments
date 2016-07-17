@@ -1,0 +1,18 @@
+package SpellingCorrector;
+ 
+ 
+import java.nio.file.Paths;
+ 
+
+public class SpellingTest {
+
+    static  SpellingCorrector spellfixer;
+
+    public static void main(String[] args) throws Exception {
+         
+        spellfixer	= new SpellingCorrector(Paths.get("/home/amitkumarx86/Downloads/big_doc.txt"));;
+        String word="lisen";
+        String correctWord = spellfixer.correct(word);
+        System.out.println(correctWord);
+ }
+}

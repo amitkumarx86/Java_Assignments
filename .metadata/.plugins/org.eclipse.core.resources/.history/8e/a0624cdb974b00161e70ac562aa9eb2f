@@ -1,0 +1,16 @@
+package SpellingCorrector;
+ 
+ 
+import java.nio.file.Paths;
+ 
+
+public class SpellingTest {
+
+    static  SpellingCorrector spellfixer;
+
+    public static void main(String[] args) throws Exception {
+         
+        spellfixer	= new SpellingCorrector(Paths.get("/home/amitkumarx86/Downloads/big_doc.txt"));;
+        System.out.println( spellfixer.correct("goood") );
+ }
+}

@@ -1,0 +1,10 @@
+package ATM;
+
+abstract class ATM {
+private int trxn_id;
+	abstract int withDraw();
+	abstract int deposit();
+	abstract int checkBalance();
+	abstract int miniStatement();
+	abstract int authentication();
+}

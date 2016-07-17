@@ -1,0 +1,9 @@
+package learn_java;
+
+import java.util.Scanner;
+
+public class Demo {
+ public static void main(String args[]){
+	 Scanner reader = new Scanner(System.in);
+ }
+}

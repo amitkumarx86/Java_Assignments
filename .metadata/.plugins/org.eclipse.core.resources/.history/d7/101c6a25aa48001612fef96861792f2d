@@ -1,0 +1,91 @@
+package Day2;
+
+class LList {
+    public String bookName;
+    public LList nextLink;
+
+    //Link constructor
+    public LList(String bookName) {
+	    this.bookName = bookName;
+    }
+
+    //Print Link data
+    public void printLink() {
+	    System.out.print("{ "+bookName+" }");
+    }
+}
+
+class LinkList {
+    private LList first;
+
+    //LinkList constructor
+    public LinkList() {
+	    first = null;
+    }
+
+    //Returns true if list is empty
+    public boolean isEmpty() {
+	    return first == null;
+    }
+
+    //Inserts a new Link at the first of the list
+    public void insertatFirst(String bookName) {
+    	LList link = new LList(bookName);
+	    link.nextLink = first;
+	    first = link;
+    }
+    
+    //Inserts a new Link at the last of the list
+    public void insertatLast(String bookName) {
+    	LList currentLink = first;
+	    while(currentLink.nextLink != null) {
+		    currentLink = currentLink.nextLink;
+	    }
+	    LList link = new LList(bookName);
+	    currentLink.nextLink = link;
+	    link.nextLink = null;
+    }
+
+    //Deletes the link at the first of the list
+    public LList delete() {
+    	LList temp = first;
+	    first = first.nextLink;
+	    return temp;
+    }
+
+    //Prints list data
+    public void printList() {
+    	LList currentLink = first;
+	    System.out.print("List: ");
+	    while(currentLink != null) {
+		    currentLink.printLink();
+		    currentLink = currentLink.nextLink;
+	    }
+	    System.out.println("");
+    }
+}  
+
+public class LinkListTest {
+    public static void main(String[] args) {
+	    LinkList list = new LinkList();
+
+	    list.insertatFirst("Harry Potter 1");
+	    list.insertatFirst("Harry Potter 2");
+	    list.insertatFirst("Harry Potter 3");
+	    list.insertatFirst("Harry Potter 4");
+
+	    list.printList();
+	    list.insertatLast("Harry Potter 5");
+	    list.printList();
+	    
+        /*
+	    while(!list.isEmpty()) {
+		    Link deletedLink = list.delete();
+		    System.out.print("deleted: ");
+		    deletedLink.printLink();
+		    System.out.println("");
+	    }
+	    list.printList();
+	    */
+    }
+}

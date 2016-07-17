@@ -1,0 +1,19 @@
+package learn_java;
+
+public class Day2_pattern {
+	public static void main(String[] args) {
+		String pattern = "0123456789"; 
+		/*
+		for(int i=0; i<10; i++){
+			String reverse = new StringBuffer(pattern.substring(0, i)).reverse().toString();
+			System.out.println(pattern.substring(0,i+1) + reverse);
+		}
+		*/
+		for(int i=0; i<10; i++){
+			for(int i1=i; i1>=0;i1--) System.out.print(" ");
+			String reverse = new StringBuffer(pattern.substring(0, i)).reverse().toString();
+			System.out.println(pattern.substring(0,i+1) + reverse);
+		}
+		
+	}
+}

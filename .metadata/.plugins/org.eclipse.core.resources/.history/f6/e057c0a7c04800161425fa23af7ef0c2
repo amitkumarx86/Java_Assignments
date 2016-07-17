@@ -1,0 +1,124 @@
+package Day2;
+
+class Link {
+    public Object bookName;
+    public Link nextLink;
+
+    //Link constructor
+    public Link(Object bookName) {
+	    this.bookName = bookName;
+    }
+
+    //Print Link data
+    public void printLink() {
+	    System.out.print("{ "+bookName+" }");
+    }
+}
+
+public class LList {
+    private Link first;
+
+    //LList constructor
+    public LList() {
+	    first = null;
+    }
+
+    //Returns true if list is empty
+    public boolean isEmpty() {
+	    return first == null;
+    }
+
+    //Inserts a new Link at the first of the list
+    public void insertatFirst(String bookName) {
+    	Link link = new Link(bookName);
+	    link.nextLink = first;
+	    first = link;
+    }
+    
+    //Inserts a new Link at the last of the list
+    public void append(String bookName) {
+    	Link currentLink = first;
+	    while(currentLink.nextLink != null) {
+		    currentLink = currentLink.nextLink;
+	    }
+	    Link link = new Link(bookName);
+	    currentLink.nextLink = link;
+	    link.nextLink = null;
+    }
+    // insert at position
+    public void insert(int pos, Object bookName) {
+    	Link currentLink = first;
+    	int temp=1;
+    	
+	    while(currentLink.nextLink != null && temp++ != pos) {
+		    currentLink = currentLink.nextLink;
+	    }
+	    Link link = new Link(bookName);
+	    if(currentLink.nextLink != null){
+	    	link.nextLink = currentLink.nextLink;
+	    	currentLink.nextLink = link;
+	    }
+	    else {
+	    	currentLink.nextLink = link;
+	    	link.nextLink = null;
+	    }
+
+    }
+    //Deletes the link at the first of the list
+    public Link delete() {
+    	Link temp = first;
+	    first = first.nextLink;
+	    return temp;
+    }
+    //Deletes the link from position 
+    public void remove(int pos) {
+    	Link currentLink = first;
+    	int temp=1;
+    	
+	    while(currentLink.nextLink.nextLink != null && temp++ != pos) {
+		    currentLink = currentLink.nextLink;
+	    }
+	    currentLink.printLink();
+    }
+    //Prints list data
+    public void printList() {
+    	Link currentLink = first;
+	    System.out.print("List: ");
+	    while(currentLink != null) {
+		    currentLink.printLink();
+		    currentLink = currentLink.nextLink;
+	    }
+	    System.out.println("");
+    }
+}  
+
+class LinkListTest {
+    public static void main(String[] args) {
+    	System.out.println("asdkfadskj");
+	    LList list = new LList();
+	    list.insertatFirst("Harry Potter 1");
+	    list.insertatFirst("Harry Potter 2");
+	    list.insertatFirst("Harry Potter 3");
+	    list.insertatFirst("Harry Potter 4");
+
+	    list.printList();
+	    list.append("Harry Potter 5");
+	    list.printList();
+	    
+	    list.insert(3, "java");
+	    list.printList();
+	    
+	    list.remove(3);
+        
+	    
+        /*
+	    while(!list.isEmpty()) {
+		    Link deletedLink = list.delete();
+		    System.out.print("deleted: ");
+		    deletedLink.printLink();
+		    System.out.println("");
+	    }
+	    list.printList();
+	    */
+    }
+}

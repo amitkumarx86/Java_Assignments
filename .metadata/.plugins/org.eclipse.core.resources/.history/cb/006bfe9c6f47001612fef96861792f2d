@@ -1,0 +1,47 @@
+package learn_java;
+
+import java.util.Scanner;
+
+public class Prisoner_problem {
+	public static void main(String[] args) {
+		Scanner reader = new Scanner(System.in);
+        int T = reader.nextInt();
+        int arr[][]=new int[T][3];
+        int key=0;
+        int i =0;
+        int j=0;
+        while(i < T){
+        	j=0;
+        	int N = reader.nextInt();
+            int M = reader.nextInt();
+            int S = reader.nextInt();
+            arr[i][j++] = N;
+            arr[i][j++] = M;
+            arr[i][j++] = S;
+            i++;
+        }
+        
+      
+        
+        for(int k =0; k<T;k++){
+        	j=0;
+        	int M = arr[k][j++];
+        	int N = arr[k][j++];
+        	int S = arr[k][j++];
+        	
+        	System.out.println(M + " " + N + " " + S);
+        	while(M > 0){
+                if (S >= N)
+                	S = S % N;
+                System.out.println(S + " "+ N);
+                M--;
+                S++;
+            }
+            System.out.println(S);
+        }
+        
+        
+            
+            
+	}
+}

@@ -1,0 +1,47 @@
+package learn_java;
+
+import java.util.Scanner;
+
+public class Day1_prob3 {
+	
+	public static void main(String[] args) {
+	   Scanner reader = new Scanner(System.in);	
+	   int no_cars = reader.nextInt();
+	   for(int i=0;i<no_cars;i++){
+		   int type = reader.nextInt();
+		   float car_efficiency = reader.nextFloat();
+		   float remaining_fuel = reader.nextFloat();
+		   if(type == 1){
+			   Diesel_car  diesel_car = new Diesel_car(car_efficiency, remaining_fuel);
+		   }
+		   else{
+			   Petrol_car petrol_car = new Petrol_car(car_efficiency, remaining_fuel); 
+		   }
+	   }
+	}
+}
+class Diesel_car{
+	float car_efficiency;
+	float remaining_fuel;
+	Diesel_car(float car_efficiency, float remaining_fuel){
+		this.car_efficiency = car_efficiency;
+		this.remaining_fuel = remaining_fuel;
+	}
+	private float efficiency(){
+		float eff=0;
+		return eff;
+	}
+}
+class Petrol_car{
+	float car_efficiency;
+	float remaining_fuel;
+	Petrol_car(float car_efficiency, float remaining_fuel){
+		this.car_efficiency = car_efficiency;
+		this.remaining_fuel = remaining_fuel;
+	}
+	
+	private float efficiency(){
+		float eff=0;
+		return eff;
+	}
+}

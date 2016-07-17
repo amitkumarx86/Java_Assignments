@@ -1,0 +1,53 @@
+package SpellingCorrector;
+ 
+ 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Optional;
+import java.util.stream.Stream;
+ 
+
+public class SpellingTest {
+
+    static  SpellingCorrector spellfixer;
+
+    public static void main(String[] args) throws Exception {
+         
+        spellfixer	= new SpellingCorrector(Paths.get("/home/amitkumarx86/Downloads/big_doc.txt"));;
+        String word="abv";
+        /*
+        String correctWord = spellfixer.correct(word);
+        if(!word.equals(correctWord))
+        System.out.println("Did you mean: "+correctWord);
+        else
+        	System.out.println(word);
+        */
+        //testing
+        Testing(Paths.get("/home/amitkumarx86/Downloads/Test.txt"));
+        
+        	
+ }
+public static void Testing(Path textFile) throws Exception{
+	    Map<String,Integer> testMap = new HashMap<>();
+	    
+        Stream.of(new String(Files.readAllBytes( textFile ))
+        		.toLowerCase()
+        		.split(" "))
+		        .forEach( (key) ->
+		           {
+		        	   testMap.compute( key, (k,v) -> v == null ? 1 : v + 1  );
+		           }
+		        );
+        System.out.println(testMap);
+        for(Entry<String, Integer> m : testMap.entrySet()){
+        	System.out.print("Word = "+m.getKey());
+        	System.out.println(" Correct Word = "+spellfixer.correct(m.getKey()));
+        }
+        
+        
+    }
+}

@@ -1,0 +1,20 @@
+package SpellingCorrector;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.time.DateTimeException;
+import java.util.Date;
+import java.util.HashMap;
+
+public class SpellingTest {
+
+    static  SpellingCorrector spellfixer;
+
+    public static void main(String[] args) throws Exception {
+        long start = System.currentTimeMillis();
+
+        spellfixer	= new SpellingCorrector(Paths.get("/home/amitkumarx86/Downloads/big_doc.txt"));;
+
+        System.out.println( spellfixer.correct("spelaing") );
+ }
+}

@@ -1,0 +1,16 @@
+package ATM;
+
+abstract class ATM {
+private int trxn_id;
+	abstract int withDraw();
+	abstract int deposit();
+	abstract int checkBalance();
+	abstract int miniStatement();
+	abstract int authentication();
+public int getTrxn_id(){
+	return trxn_id;
+}
+public void setTrxn_id(int trxn_id){
+	this.trxn_id = trxn_id;
+}
+}

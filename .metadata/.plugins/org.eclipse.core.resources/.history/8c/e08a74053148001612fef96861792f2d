@@ -1,0 +1,30 @@
+package Algorithms;
+
+import java.util.Scanner;
+
+public class Find_Digits {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        int[] arr = new int[t];
+        
+        String[] temp=null;
+        
+        for(int a0 = 0; a0 < t; a0++){
+            arr[a0] = in.nextInt();
+            temp = new Integer(arr[a0]).toString().split("");
+            int count=0;
+            for(int i=0; i<temp.length; i++){
+            	 int temp1 = new Integer(temp[i]);
+            	 if(temp1 != 0 && arr[a0] % temp1 == 0){
+            		 count++;
+            	 }
+    		}
+            System.out.println(count);
+            
+        }
+        
+        
+        
+	}
+}

@@ -1,0 +1,10 @@
+package learn_java;
+
+public class Day2_pattern {
+	public static void main(String[] args) {
+		String pattern = "0123456789"; 
+		for(int i=0; i<10; i++){
+			System.out.println(pattern.substring(0, i+1)+ pattern.substring(i+1,0));
+		}
+	}
+}

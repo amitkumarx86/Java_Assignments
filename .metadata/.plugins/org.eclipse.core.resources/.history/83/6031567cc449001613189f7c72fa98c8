@@ -1,0 +1,38 @@
+package Day2;
+
+import java.util.Scanner;
+
+public class LongSum {
+	public static void main(String[] args) {
+		  Scanner in = new Scanner(System.in);
+	        int n = in.nextInt();
+	        int arr[] = new int[n];
+	        for(int arr_i=0; arr_i < n; arr_i++){
+	            arr[arr_i] = in.nextInt();
+	        }
+	        int carry=0;
+	        long sum=0;
+	        int[] add = new int[10];
+	        int index=10;
+	        
+	        for(int arr_i=0; arr_i < 10; arr_i++){
+	        	sum=0;
+	            sum =  sum + carry;
+	            carry=0;
+	        	for(int i=0; i < n;i++){
+	        		sum =  sum +  (new Integer((new Integer(arr[i]).toString()).substring(0,arr_i+1))) % 10;
+	                
+	                if(sum >= 10){
+	                  sum = sum - 10;
+	                  carry = 1;
+	                }
+	                
+	        	}
+	        	System.out.println("sum "+sum);
+	        	add[--index] = (int) sum ;
+	        }
+	        for(int i=0; i < 10;i++){
+	        	System.out.print(add[i]);
+	        }
+    }
+}

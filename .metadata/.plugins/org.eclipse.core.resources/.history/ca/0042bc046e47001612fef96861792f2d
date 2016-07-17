@@ -1,0 +1,52 @@
+package learn_java;
+
+import java.util.Objects;
+import java.util.Scanner;
+
+public class Day1_prob3 {
+	
+	public static void main(String[] args) {
+	   Scanner reader = new Scanner(System.in);	
+	   int no_cars = reader.nextInt();
+	   Car[] objects = new Car[no_cars];
+	   
+	   int k=0;
+	   // input
+	   for(int i=0;i<no_cars;i++){
+		   int type = reader.nextInt();
+		   float car_efficiency = reader.nextFloat();
+		   float remaining_fuel = reader.nextFloat();
+		   objects[k++] = new Car(type, car_efficiency, remaining_fuel);
+		}
+	   
+	   
+	   // output 
+	   for(int i=0;i<no_cars;i++){
+			   System.out.println("Car "+ i + "range= "+ objects[i].efficiency());
+		   }
+		   
+			   
+	   }
+	}
+
+
+// car class
+class Car {
+	float car_efficiency;
+	float remaining_fuel;
+	int type;
+	Car(int type, float car_efficiency, float remaining_fuel){
+		this.type = type;
+		this.car_efficiency = car_efficiency;
+		this.remaining_fuel = remaining_fuel;
+	}
+	public float efficiency(){
+		float eff=0;
+		if(this.type ==1)
+			eff = this.car_efficiency * this.remaining_fuel;
+		else
+			eff = this.car_efficiency * this.remaining_fuel;
+		return eff;
+	}
+}
+ 

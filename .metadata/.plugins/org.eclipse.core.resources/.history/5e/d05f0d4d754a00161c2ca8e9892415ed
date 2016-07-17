@@ -1,0 +1,10 @@
+package Day3;
+
+public interface AtmInterface {
+	public void langugae();
+	public void CardRead();
+	public void printReciept();
+	public void DespenseCash();
+	public void debitCash();
+}
+

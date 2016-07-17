@@ -1,0 +1,25 @@
+package ATM;
+
+public class SBIATM extends ATM{
+	private int amount;
+	private int userName;
+	private int passWord;
+	double getTrxn_id;
+	public SBIATM(int userName, int passWord){
+		this.userName=userName;
+		this.passWord=passWord;
+	}
+	
+	double withDraw(int dispenseAmount){
+		if(this.amount >= dispenseAmount){
+			this.amount = this.amount - dispenseAmount;
+			getTrxn_id = getTrxn_id();
+		}	
+		return getTrxn_id;
+	}
+	
+	int deposit();
+	int checkBalance();
+	int miniStatement();
+	int authentication();
+}

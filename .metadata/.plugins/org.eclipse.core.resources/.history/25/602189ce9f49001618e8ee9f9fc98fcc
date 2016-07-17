@@ -1,0 +1,5 @@
+package Day2;
+class Blob {
+	   int[] space = new int[10000];
+		
+}
