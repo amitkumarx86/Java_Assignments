@@ -1,0 +1,12 @@
+package sorting;
+
+public class RadixSort {
+    public static void main(String[] args) {
+	int[] ar= {124,560,670,789,528,154,111};
+	radixSort(ar);
+    }
+    public static radixSort(int[] ar){
+	
+    }
+    
+}

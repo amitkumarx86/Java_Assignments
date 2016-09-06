@@ -1,0 +1,93 @@
+package Algorithms;
+
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class BiggerIsGreater {
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner read = new Scanner(System.in);
+        //int T = read.nextInt();
+        int T = 1;
+        //read.nextLine();
+        while(T-- > 0){
+            //String s = read.nextLine();
+            String s = "dkhc";//hcdk;
+            if(s.length() == 1){
+        	System.out.println(s);
+        	continue;
+            }
+            
+            boolean flag1=true;
+            for(int i=0,j=s.length()-1;i<s.length()/2;i++,j--){
+        	if(s.charAt(i) != s.charAt(j)){
+        	    flag1 = false;
+        	    break;
+        	}
+        	    
+            }
+            if(flag1) {
+        	System.out.println("no answer");
+        	continue;
+            }
+            String[] str = s.split("");
+            boolean flag = false;
+            {
+                int i = s.length()-1;
+                while(i > 0){
+
+                if(s.length() > 2 && i-1 <= 0){
+                    break;
+                }
+
+                if(s.charAt(i) > s.charAt(i-1)){
+                    String temp = ""+s.charAt(i);
+                    str[i] = ""+s.charAt(i-1);
+                    str[--i] = temp;
+                    flag = true;
+                    break;
+                }
+                else
+                    i--;
+                }
+                if(flag) {
+                for(String st : str) System.out.print(st);
+                System.out.println();
+                continue;
+                }
+            }
+            String[] s1 = s.split("");
+            Arrays.sort(s1);
+            //for(String str: s1) System.out.println(str);
+            
+            String newS = "";
+            int[] arrIndex = new int[s.length()];
+            Arrays.fill(arrIndex, 1);
+            
+            int len = s1.length;
+            char max=0;
+            for(int i = 0 ;i< len;i++){
+        	if(s1[i].charAt(0) == s.charAt(0)){
+        	    if(i+1 < len) {max = s1[i+1].charAt(0); arrIndex[s.indexOf(max)] = 0;}
+        	    else { max = s1[i].charAt(0); arrIndex[s.indexOf(max)] = 0;}
+        	}
+            }
+            System.out.println(max);
+            for(int j:arrIndex) System.out.print(j);
+            System.out.println();
+            
+            newS += max;
+            for(int i=1;i<s1.length;i++){
+        	if(arrIndex[s.indexOf(s1[i].charAt(0))] !=0) newS += s1[i].charAt(0); 
+            }
+            
+            System.out.println(newS);
+            
+        }
+        read.close();
+    }
+}

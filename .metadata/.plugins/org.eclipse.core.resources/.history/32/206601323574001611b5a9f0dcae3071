@@ -1,0 +1,14 @@
+package Heap;
+
+public class HeapDriver {
+    public static void main(String[] args) {
+	HeapMethods heap = new HeapMethods();
+	int ar[] = {34,19,53,64,54,73,35,7,17,20};
+	heap.buildHeap(ar);
+	
+    }
+    static void printHeap(int[] ar){
+	for(int i=0;i<ar.length;i++)
+	    System.out.print(ar[i] + " " );
+    }
+}

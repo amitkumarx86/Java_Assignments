@@ -1,0 +1,80 @@
+package Tokeniser;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+
+import Parser.JsonObject;
+
+public class Token {
+	String token;
+	int type;
+	static ArrayList<JsonObject> jsonObject = new ArrayList<JsonObject>();
+	
+	Token(String token, int type){
+		this.token=token;
+		this.type=type;
+	}
+	
+	Token(){}
+	
+	public String toString(){
+		
+		String s = this.token + "" + this.type;
+		return s;
+	}
+	
+	public static void main(String[] args) throws UnsupportedEncodingException, IOException {
+		
+		parser("/home/amitkumarx86/Downloads/json");
+		
+		for (JsonObject json : jsonObject){
+            System.out.print(json.getKey() + "->");
+            System.out.println(json.getValue());
+        }
+	}
+	
+	public static void parser(String path) throws UnsupportedEncodingException, IOException{
+		Tokeniser tokeniser =  new Tokeniser(path);
+		String content = tokeniser.readFile();
+		int nextToken=0;
+		int counter=0;
+		String value,key = null;
+		
+		while(true){
+			Token t = new Token();
+			t = tokeniser.getNextToken(content);
+			if(t == null){
+				//System.out.println("JSON is parsed");
+				break;
+			}
+			if(nextToken == 8){
+				//System.out.println(t.token+ " " + t.type);
+				if(t.type != 8 && !t.token.equals("]")){
+					System.out.println("\" expected after key");
+				}
+				nextToken =0;
+			}
+			//for "
+			if(t.type == 9 || t.type == 10){
+				nextToken = 8;
+				if(counter == 0){
+					key = t.token;
+					counter++;
+				}
+				else{
+					value = t.token;
+					//System.out.println("key = " + key + "value " + value);
+					value = value.replace("[", "");
+					jsonObject.add(new JsonObject(key, value));
+					counter =0;
+				}
+				
+			}
+			
+			
+			
+			//System.out.println("Token = "+ t.token + "  type = "+t.type);
+		}
+	}
+}

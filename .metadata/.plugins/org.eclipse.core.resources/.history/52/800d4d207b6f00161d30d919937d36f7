@@ -1,0 +1,80 @@
+package Algorithms;
+
+import java.util.ArrayList;
+
+public class MaxSubArray{
+    public static void main(String args[]) {
+	//int[] arr = {5,6,2,20,-14,-16,1,-53,-22,10};
+	int[] arr={1,2,10,6,3,1,2,7,6,4,2,8,6,1,7,3};
+	//maxSubArray(arr);
+	//maxSubArrayofLengthL(arr,3);
+	//minSubArraySumAtLeastS(arr,35);
+	minSubArrayWhichContains1toK(arr,4);
+    }
+    public static void printArray(int[] ar){ for(int a : ar) System.out.print(a); System.out.println();}
+    public static void minSubArrayWhichContains1toK(int[] ar,int k){
+	int[] kAr = new int[k+1];
+	int startInd=0,endInd=0, count=0;
+	for(int i=0;i<ar.length;i++){
+	    if(count==k){endInd=i;break;}
+	    if(ar[i] >= 1 && ar[i] <= k) { kAr[ar[i]]++; if(kAr[ar[i]]==0)count++;}
+	    
+	}
+	
+	for(int i=0;i<ar.length;i++){
+	    if(ar[i] >= 1 && ar[i] <= k) { 
+		if(count<k){
+		    startInd=i-1;
+		    kAr[ar[i-1]]++;
+		    count++;
+		}
+		kAr[ar[i]]--; 
+		if(kAr[ar[i]]!=0)count--;
+		}
+	}
+	printArray(kAr);
+    }
+    public static void maxSubArray(int[] arr){
+	int max=0,sum=0;
+	for(int i=0;i<arr.length;i++){
+	    sum +=arr[i];
+	    if(sum > max) max = sum;
+	    if(sum < 0) sum=0;
+	}
+	ArrayList<Integer> ar = new ArrayList<Integer>();
+	sum=0;
+	for(int i=0;i<arr.length;i++){
+	    ar.add(arr[i]);
+	    sum +=arr[i];
+	    if(sum == max) break;
+	    if(sum < 0) {
+		sum=0;
+	    	ar.clear();
+	    }
+	}
+	System.out.println(max);
+	System.out.println(ar);
+    }
+    public static void maxSubArrayofLengthL(int[] ar,int l){
+	int sum=0,max=0;
+	for(int i=0;i<ar.length;i++){
+	    if(i<=l-1) {sum+=ar[i];if(sum > max) max=sum; if(sum<0) sum=0;}
+	    else{
+		sum = sum-ar[i-l];
+		sum = sum+ar[i];
+		if(sum > max) max = sum;
+		if(sum<0) sum=0;
+	    }
+	}
+	System.out.println(max);
+    }
+    public static void minSubArraySumAtLeastS(int[] ar,int S){
+	int max=0,sum=0;
+	for(int i=0;i<ar.length;i++){
+	    sum+=ar[i];
+	    if(sum > max) max = sum;
+	    if(sum<0) sum=0;
+	}
+	System.out.println(max);
+    }
+}

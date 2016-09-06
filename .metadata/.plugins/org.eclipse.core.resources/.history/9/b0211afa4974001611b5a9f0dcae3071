@@ -1,0 +1,29 @@
+package Heap;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class HeapAssignment_1 {
+    public static void main(String[] args) throws IOException {
+	createNumber();
+    }
+    static void createNumber() throws IOException{
+	BufferedWriter writer = new BufferedWriter( new FileWriter("/home/amitkumarx86/Desktop/headNumber.txt"));
+	for(long i=0;i<100;i++){
+	    for(int j=0;j<1;j++){
+		//System.out.print(" "+(int)Math.random()*100);
+		writer.write((int) (Math.random()*100)+" ");
+	    }}
+	// do stuff 
+	writer.close();
+	BufferedReader reader = new BufferedReader(new FileReader("/home/amitkumarx86/Desktop/headNumber.txt"));
+	String sCurrentLine;
+	while ((sCurrentLine = reader.readLine()) != null) {
+		System.out.println(sCurrentLine);
+	}
+
+    }
+}

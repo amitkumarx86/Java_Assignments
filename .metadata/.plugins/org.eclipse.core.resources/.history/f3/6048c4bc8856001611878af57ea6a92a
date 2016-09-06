@@ -1,0 +1,79 @@
+package Tokeniser;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+
+import Parser.JsonObject;
+
+public class Token {
+	String token;
+	int type;
+	static ArrayList<JsonObject> jsonObject = new ArrayList<JsonObject>();
+	static Tokeniser tokeniser;
+	Token(String token, int type){
+		this.token=token;
+		this.type=type;
+	}
+	public Token(){}
+	public String toString(){
+		
+		String s = this.token + "" + this.type;
+		return s;
+	}
+	
+	public static void main(String[] args) throws UnsupportedEncodingException, IOException {
+		String path = "/home/amitkumarx86/Downloads/json";
+		tokeniser =  new Tokeniser(path);
+		String content = tokeniser.readFile();
+		parser(content);
+	}
+	
+	public static void parser(String content) throws UnsupportedEncodingException, IOException{
+		int nextToken=0;
+		int counter=0;
+		Object value,key = null;
+		while(true){
+		        Token t = new Token();
+		        t = tokeniser.getNextToken(content);
+		    	if(t != null){
+        		    	if(t.type == 11) continue;
+        		    	if(t.type == 1){
+        		    	    System.out.println("sdf");
+                		    key = getKey(content);
+                		    System.out.println(key);
+                		    break;
+                		}
+            			else if(t.type == 6){
+                		     value = getValue(content);
+                		}
+        		}
+        		else
+        		    break; // string finished
+		}
+		
+	}
+	public static String getKey(String content){
+	    String key = "";
+	    Token t = new Token() ;
+	    t = tokeniser.getNextToken(content);
+	    if(t.type == 7){  // 3 is for "
+		t = tokeniser.getNextToken(content);
+		while(t.type != 3){
+		    if(t.type == 11) {
+			t = tokeniser.getNextToken(content);
+			continue;
+		    }
+		    key += t.token;
+		    t = tokeniser.getNextToken(content);
+		}
+	    }
+	    
+	    return  key;
+	    
+	}
+	public static Object getValue(String content){
+	    Object value = null;
+	    return value;
+	}
+}

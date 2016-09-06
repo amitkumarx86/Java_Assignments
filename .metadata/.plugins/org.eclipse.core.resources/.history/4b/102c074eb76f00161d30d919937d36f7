@@ -1,0 +1,30 @@
+package sorting;
+
+public class NSquareSorting {
+    public static void main(String[] args) {
+	int[] a = {5,4,3,2,1};
+	insertionSort(a,1);
+    }
+    public static void insertionSort(int[] a,int order){
+	for(int i=1;i<a.length;i++){
+	    int j=i-1;
+	    int key = a[i];
+	    boolean cond= order == 1 ? a[j] > key : a[j] < key;
+	    while(j>=0 && cond){
+		a[j+1] = a[j];
+		cond= order == 1 ? a[j] > key : a[j] < key;
+		j--;
+		
+	    }
+	    a[j+1] = key;
+	}
+	for(int i=0;i<a.length;i++)
+	    System.out.println(a[i]);
+    }
+    public static void bubbleSort(){
+	
+    }
+    public static void selectionSort(){
+	
+    }
+}

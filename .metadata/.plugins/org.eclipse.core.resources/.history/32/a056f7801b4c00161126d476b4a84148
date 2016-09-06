@@ -1,0 +1,53 @@
+package Algorithms;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class BeautifulPairs {
+	 public static void main(String[] args) {
+	        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+	        /* 
+		    Scanner reader = new Scanner(System.in);
+	        int n = reader.nextInt();
+	        int[] A = new int[n];
+	        int[] B = new int[n];
+	        for(int i =0; i< n; i++){
+	            A[i] = reader.nextInt();
+	        }
+	        for(int i =0; i< n; i++){
+	            B[i] = reader.nextInt();
+	        }
+	        */
+		 	int n = 3;
+	        int[] A = {1,2,2};
+	        int[] B = {1,2,3};
+	        B[B.length-1] = A[A.length-1];
+	        int count=0;
+	        int ix = 0;
+	        int iy=0, flag=0;
+	        Map<Integer, Integer> m= new HashMap<>();
+	        for(int i =0; i< n; i++){
+	        	for(int j = 0; j< n;j++){
+	        		if(A[i] == B[j]){
+	        			//System.out.println("Pair = "+" "+ i + ", "+ j);
+	        			for(Map.Entry<Integer,Integer> m1: m.entrySet()){
+	        				if(m1.getValue() == j){
+	        					flag=1;
+	        				}
+	        			}
+	        			if(flag != 1){
+	        				m.put(i,j);
+	        				count++;
+		        			
+	        			}
+	        			flag=0;
+	        			
+	        		}
+	        	}
+	        }
+	        System.out.println(count);
+	        System.out.println(m);
+	        
+	    }
+}

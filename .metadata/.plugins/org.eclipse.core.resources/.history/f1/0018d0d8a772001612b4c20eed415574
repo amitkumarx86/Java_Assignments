@@ -1,0 +1,62 @@
+package Algorithms;
+
+public class NumbersfromOnetoK {
+    public static void main(String[] args) {
+	NumbersfromOnetoK m = new NumbersfromOnetoK();
+	m.findSubArrayWith_1_to_K_Numbers();
+    }
+    private void findSubArrayWith_1_to_K_Numbers(){
+	int[] arr={1,2,10,6,3,1,2,7,6,4,2,8,6,7,7,7,1,2,3,4};
+	System.out.println(arr.length);
+	int k=4,strtInd=0,endInd=0,digCount=0;
+	int[] kArr=new int[k+1];
+
+	/*
+	 * First find the subarray in which 1 to k number exist, it may 
+	 * not be the minimal then we will try to minimize it
+	 * */
+	for(int i=0;i<arr.length;i++){
+	    if(arr[i] <=k && arr[i] >=1){
+		if(kArr[arr[i]]==0) digCount++;
+		kArr[arr[i]]++;
+		if(digCount == k) {endInd=i;break;}
+	    }
+	}
+	int i=0,min_len=endInd-strtInd+1,tempInd=endInd+1 < arr.length?endInd+1:endInd;
+	
+	while(i<arr.length && tempInd < arr.length){
+	     
+	    if(arr[i] >=1 && arr[i] <= k){
+		
+		arr[kArr[i]]--;
+		if(arr[kArr[i]] == 0){
+		    arr[kArr[i]]++;
+		    if(arr[tempInd] >=1 && arr[tempInd] <= k)
+			kArr[arr[tempInd]++]++;
+		    else
+			tempInd++;
+		    //check for min len
+		    if(tempInd - i+1 < min_len){
+			endInd = tempInd; strtInd = i; min_len=tempInd - i+1;
+		    }
+		}
+		else{
+		    i++;
+		    System.out.println(i);
+		    if(tempInd - i+1 < min_len){
+			endInd = tempInd; strtInd = i; min_len=tempInd - i+1;
+		    }
+		}
+	    }
+	    else{
+		i++;
+		System.out.println("outside : "+i);
+	    }
+	}
+	System.out.println(strtInd+" "+endInd);
+    }
+    private void printArray(int[] arr){
+	for(int a : arr) System.out.print(a+" ");
+	System.out.println();
+    }
+}

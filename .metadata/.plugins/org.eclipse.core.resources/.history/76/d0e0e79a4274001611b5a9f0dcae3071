@@ -1,0 +1,22 @@
+package Heap;
+
+public class HeapDriver {
+    public static void main(String[] args) {
+	HeapMethods heap = new HeapMethods();
+	int ar[] = {34,19,53,64,54,73,35,7,17,20};
+	//printHeap(ar);
+	heap.buildHeap(ar);
+	printHeap(ar);
+	heap.decreaseKey(ar, 6, 9);
+	printHeap(ar);
+	heap.increaseKey(ar, 60, 0);
+	printHeap(ar);
+	heap.sort(ar,10);
+	
+    }
+    static void printHeap(int[] ar){
+	for(int i:ar)
+	    System.out.print(i + " " );
+	System.out.println();
+    }
+}

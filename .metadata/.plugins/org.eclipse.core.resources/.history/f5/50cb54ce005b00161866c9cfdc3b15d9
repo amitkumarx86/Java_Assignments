@@ -1,0 +1,23 @@
+package Algorithms;
+
+import java.util.Scanner;
+
+public class BiggerIsGreater {
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner read = new Scanner(System.in);
+        int T = read.nextInt();
+        read.nextLine();
+        while(T-- > 0){
+            String s = read.nextLine();
+            String[] arr   = s.split("");
+            int[] arrIndex = new int[s.length()];
+            for(int j = 0;j<arr.length  ;j++){
+        	for(int i=1;i < 26;i++){
+        	   
+                }
+            }
+        }
+        read.close();
+    }
+}

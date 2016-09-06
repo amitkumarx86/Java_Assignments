@@ -1,0 +1,53 @@
+package JsonParser;
+
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.Random;
+
+public class Tokeniser {
+	public static void main(String[] args) {
+		int tCount=0;
+		char token;
+		try {
+	        // create a new RandomAccessFile with filename test
+	        RandomAccessFile raf = new RandomAccessFile("/home/amitkumarx86/Downloads/json", "r");
+	        while(raf.readBoolean()){
+	        token = raf.readChar();
+	        System.out.println(token);
+	        switch(token){
+	        case '{':
+	        	System.out.println("Token is 1");
+	        	tCount++;
+	        	break;
+	        case '}':
+	        	System.out.println("Token is 2");
+	        	tCount++;
+	        	break;
+	        case '[':
+	        	System.out.println("Token is 3");
+	        	tCount++;
+	        	break;
+	        case ']':
+	        	System.out.println("Token is 4");
+	        	tCount++;
+	        	break;
+	        case ',':
+	        	System.out.println("Token is 5");
+	        	tCount++;
+	        	break;
+	        case '\\':
+	        	System.out.println("Token is 5");
+	        	tCount++;
+	        	break;
+	        default :
+	        	tCount++;
+	        	System.out.println("Token is alphabet");
+	        }
+	        }
+			} catch (IOException ex) {
+	        ex.printStackTrace();
+	     }
+		
+		System.out.println("Total tokens are " + tCount);
+	}
+}

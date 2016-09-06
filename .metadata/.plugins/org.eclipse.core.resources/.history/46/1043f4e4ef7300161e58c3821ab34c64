@@ -1,0 +1,49 @@
+package Trees;
+
+public class TreeMethods {
+    static int levelCount=-1;
+    static int flip=1;
+    int treeHeight(Node head){
+	if(head == null)
+	    return 0;
+	if(head.right == null && head.left==null)
+	    return 0;
+	
+	return Math.max(treeHeight(head.left),treeHeight(head.right))+1;
+    }
+    void treeLevel(Node node,int l){
+	if (node == null)
+            return ;
+   
+        /* first print the data of node */
+	node.level=l;
+        System.out.print(node.data + " ");   
+        /* then recur on left child */
+        //levelCount++;
+        System.out.println(node.level);
+        treeLevel(node.left,1+l);
+        /* and recur on right child */
+        treeLevel(node.right,1+l);
+        
+    }
+    void spiralTraversal(Node node,int level){
+	flip=~flip;
+	if(node == null)
+	    return ;
+	if(level==0)
+	    System.out.print(node.data + " "); 
+	
+	
+	if(flip == 0){
+	    spiralTraversal(node.left,node.level--);
+	    spiralTraversal(node.right,node.level--);
+	    
+	}
+	else{
+	    spiralTraversal(node.right,node.level--);
+	    spiralTraversal(node.left,node.level--);
+	    
+	    
+	}
+    }
+}

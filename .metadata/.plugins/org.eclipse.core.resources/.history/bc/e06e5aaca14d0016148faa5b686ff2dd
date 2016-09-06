@@ -1,0 +1,17 @@
+package JsonParser;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.Random;
+
+public class Tokeniser {
+	File path;
+	public Tokeniser(File f){
+		this.path = f;
+	}
+	public readFile(){
+		
+	}
+	
+}

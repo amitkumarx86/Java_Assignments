@@ -1,0 +1,25 @@
+package Algorithms;
+
+public class MaxProblems {
+    public static void main(String[] args){
+	int[] a = {1,2,3,4,5,5,6,7,-8};
+	maxAbsAiAj(a); // absolute diff b/w ai-aj
+	maxAjAi(a); // max diff b/w aj and ai where i < j
+    }
+    public static void maxAjAi(int[] a){
+	int i=0,max=0;
+	for(int j=1;j<a.length;j++){
+	    if(a[j]-a[i] > max) max = a[j]-a[i];
+	    if(a[j] < a[i]) i = j;
+	}
+	System.out.println(max);
+    }
+    public static void maxAbsAiAj(int[] a){
+	int min=a[0],max=a[0];
+	for(int i=1;i<a.length;i++){
+	    if(min > a[i]) min = a[i];
+	    if(max < a[i]) max = a[i];
+	}
+	System.out.println("min = "+min+" max = "+max+" abs(aj-ai)="+Math.abs(max-min));
+    }
+}

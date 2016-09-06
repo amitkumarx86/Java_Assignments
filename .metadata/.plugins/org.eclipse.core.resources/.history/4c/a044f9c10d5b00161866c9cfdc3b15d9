@@ -1,0 +1,100 @@
+package Algorithms;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class BiggerIsGreater {
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner read = new Scanner(System.in);
+        //int T = read.nextInt();
+        int T = 1;
+        //read.nextLine();
+        
+        while(T-- > 0){
+            //String s = read.nextLine();
+            String s = "ab";//hcdk;
+            if(s.length() == 1){
+        	System.out.println(s);
+        	continue;
+            }
+            
+            boolean flag1=true;
+            for(int i=0,j=s.length()-1;i<s.length()/2;i++,j--){
+        	if(s.charAt(i) != s.charAt(j)){
+        	    flag1 = false;
+        	    break;
+        	}
+        	    
+            }
+            if(flag1) {
+        	System.out.println("no answer");
+        	continue;
+            }
+            String[] str = s.split("");
+            boolean flag = false;
+            while(true){
+        	int i = s.length()-1;
+        	if(s.length() > 2 && i-1 <= 0){
+        	    break;
+        	}
+        	
+        	if(s.charAt(i) > s.charAt(i-1)){
+        	    String temp = ""+s.charAt(i);
+        	    str[i] = ""+s.charAt(i-1);
+        	    str[i--] = temp;
+        	    flag = true;
+        	    break;
+        	}
+            }
+            if(flag) {
+        	for(String st : str) System.out.print(st);
+        	continue;
+            }
+            
+            String[] s1 = s.substring(1).split("");
+            Arrays.sort(s1);
+            //for(String str: s1) System.out.println(str);
+            
+            String newS = "";
+            int[] arrIndex = new int[s.length()];
+            Arrays.fill(arrIndex, 1);
+            
+            char max = s1[0].charAt(0);
+            //System.out.println(max);
+            for(int i=1;i<s1.length;i++){
+        	if(max < s1[i].charAt(0)){
+        	    max = s1[i].charAt(0);  
+        	    break;
+        	}
+            }
+            arrIndex[s.indexOf(max)] = 0;
+            /*
+            for(int j=0;j<s.length() ; j++) System.out.print(arrIndex[j] + " ");
+    	    System.out.println();
+    	    */
+            //System.out.println(max);
+            newS += max;
+            char min = 122 ;
+        	for(int j=0;j<s.length() ; j++){
+        	    if(arrIndex[j] != 0){
+        		min = s.charAt(j);
+        		break;
+        	    }
+        	}
+            for(int i=1;i<s.length();i++){
+        	for(int j=0;j<s.length() ; j++){
+        	    if(arrIndex[j] != 0 && s.charAt(j) < (char)min){
+        		min = s.charAt(j);
+        		arrIndex[j] = 0;
+        		newS += min;
+        		min=122;
+        	    }
+        	}
+        	
+            }
+            System.out.println(newS);
+        }
+        read.close();
+    }
+}

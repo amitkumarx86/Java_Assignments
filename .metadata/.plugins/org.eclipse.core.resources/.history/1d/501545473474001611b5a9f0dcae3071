@@ -1,0 +1,7 @@
+package Heap;
+
+public class HeadMethods {
+    public static void main(String[] args) {
+	int ar[] = {34,19,53,64,54,73,35,7,17,20};
+    }
+}

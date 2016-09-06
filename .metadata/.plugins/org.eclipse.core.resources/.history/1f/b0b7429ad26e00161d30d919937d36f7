@@ -1,0 +1,11 @@
+package Algorithms;
+import sorting.*;
+public class FindSumOfNumber {
+    public static void main(String[] args){
+	int x = 15;
+	int[] ar = {1,2,3,4,5,6,7,1,4,10,5};
+	MergeSort a = new MergeSort();
+	a.MergeSort(ar, 0,ar.length-1);
+	for(int a1 : ar) System.out.print(a1+" ");
+    }
+}

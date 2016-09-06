@@ -1,0 +1,43 @@
+package sorting;
+
+public class NSquareSorting {
+    public static void main(String[] args) {
+	int[] a = {5,4,3,2,1,10};
+	//insertionSort(a,0); // 0 means desc and 1 means asc
+	bubbleSort(a,1);
+    }
+    public static void insertionSort(int[] a,int order){
+	for(int i=1;i<a.length;i++){
+	    int j=i-1;
+	    int key = a[i];
+	    boolean cond= order == 1 ? a[j] > key : a[j] < key;
+	    while(j>=0 && cond){
+		a[j+1] = a[j];
+		cond= order == 1 ? a[j] > key : a[j] < key;
+		j--;
+	    }
+	    a[j+1] = key;
+	}
+	
+    }
+    public static void bubbleSort(int[] a, int order){
+	for(int i=0;i<a.length;i++){
+	    int max=a[i],loc=i;
+	    for(int j=0;j<a.length-i;j++){
+		if(a[j]>max) {max = a[j];loc=j;}
+	    }
+	    a[a.length-i-1]=a[loc]-(a[loc]=a[a.length-i-1]);
+	    System.out.println(loc+" "+(a.length-i-1));
+	    printArray(a);
+	}
+	
+    }
+    public static void selectionSort(){
+	
+    }
+    public static void printArray(int[] a){
+	for(int i=0;i<a.length;i++)
+	    System.out.print(a[i]+" ");
+	System.out.println();
+    }
+}

@@ -1,0 +1,39 @@
+package Algorithms;
+
+public class MajorityNumber {
+    public static void main(String[] args) {
+	int[] ar= {7,2,3,4,5,7,7,7,6};
+	System.out.println(countMajorityNumber(ar));
+    }
+    public static int countMajorityNumber(int[] ar){
+	int count=0;
+	int A=-123;
+	int B=-123;
+	
+	for(int i=0;i<ar.length;i++){
+	    if(A == -123) {
+		A = ar[i];
+	    	continue;}
+	    if(B == -123){ 
+		B = ar[i];
+	    	continue;
+	    	}
+	    
+	    boolean flag=false,flag2=false;
+	    if(A == ar[i]) flag=true;
+	    if(B == ar[i]) flag2=true;
+	    if(!flag && !flag2){
+		B=-123;A=-123;
+	    }
+	    
+	    System.out.println(A+" "+B);
+	}
+	
+	return count;
+    }
+    private static void printArray(int[] a) {
+	// TODO Auto-generated method stub
+	for(int i : a) System.out.print(i+" ");
+        System.out.println();
+    }
+}

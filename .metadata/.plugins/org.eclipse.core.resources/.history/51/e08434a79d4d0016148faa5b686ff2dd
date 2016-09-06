@@ -1,0 +1,31 @@
+package JsonParser;
+
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.Random;
+
+public class Tokeniser {
+	public static void main(String[] args) {
+		try {
+	        // create a new RandomAccessFile with filename test
+	        RandomAccessFile raf = new RandomAccessFile("c:/test.txt", "rw");
+
+	        // write something in the file
+	        raf.writeUTF("Hello World");
+
+	        // set the file pointer at 0 position
+	        raf.seek(0);
+
+	        // read the first byte and print it
+	        System.out.println("" + raf.read());
+
+	        // set the file pointer at 4rth position
+	        raf.seek(4);
+
+	        // read the first byte and print it
+	        System.out.println("" + raf.read());
+	     } catch (IOException ex) {
+	        ex.printStackTrace();
+	     }
+	}
+}

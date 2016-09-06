@@ -12,3 +12,97 @@
 2016-07-15 13:55:20,520 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Updating Gradle version information cache failed. Using outdated cache.
 2016-07-16 19:01:26,734 [Worker-4] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2016-07-16 22:35:06,974 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2016-07-17 17:04:20,348 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2016-07-18 22:57:09,719 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-07-19 13:27:24,229 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2016-07-20 09:25:45,810 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-07-24 22:56:15,600 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-07-27 09:37:35,305 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-07-27 10:24:19,589 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.jar
+2016-07-27 10:24:21,368 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.jar
+2016-07-27 10:24:27,948 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.pom
+2016-07-27 10:24:30,818 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.pom
+2016-07-27 10:24:56,518 [Worker-28] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' /home/amitkumarx86/workspace/132/pom.xml
+2016-07-27 10:25:14,601 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.5/maven-clean-plugin-2.5.jar
+2016-07-27 10:25:36,567 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.5/maven-clean-plugin-2.5.jar
+2016-07-27 10:25:40,507 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar
+2016-07-27 10:25:44,705 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar
+2016-07-27 10:25:45,149 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.jar
+2016-07-27 10:25:47,681 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.jar
+2016-07-27 10:25:49,083 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.jar
+2016-07-27 10:25:56,322 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.jar
+2016-07-27 10:28:50,073 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.jar
+2016-07-27 10:28:50,177 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.jar
+2016-07-27 10:28:50,181 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/2.4/maven-install-plugin-2.4.jar
+2016-07-27 10:28:50,183 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/2.7/maven-deploy-plugin-2.7.jar
+2016-07-27 10:28:50,186 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-site-plugin/3.3/maven-site-plugin-3.3.jar
+2016-07-27 10:28:50,215 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.pom
+2016-07-27 10:28:50,286 [Worker-28] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: 1:132:0.0.1-SNAPSHOT @ /home/amitkumarx86/workspace/132/pom.xml.
+2016-07-27 10:28:50,316 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.pom
+2016-07-27 10:28:50,351 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom
+2016-07-27 22:58:57,988 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2016-07-27 23:01:18,130 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2016-07-27 23:05:53,850 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo1.maven.org/maven2/com/sun/jersey/archetypes/jersey-quickstart-webapp/1.19.1/jersey-quickstart-webapp-1.19.1.jar
+2016-07-27 23:05:55,569 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo1.maven.org/maven2/com/sun/jersey/archetypes/jersey-quickstart-webapp/1.19.1/jersey-quickstart-webapp-1.19.1.jar
+2016-07-27 23:05:55,899 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo1.maven.org/maven2/com/sun/jersey/archetypes/jersey-quickstart-webapp/1.19.1/jersey-quickstart-webapp-1.19.1.pom
+2016-07-27 23:05:56,207 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo1.maven.org/maven2/com/sun/jersey/archetypes/jersey-quickstart-webapp/1.19.1/jersey-quickstart-webapp-1.19.1.pom
+2016-07-27 23:06:58,530 [Worker-10] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' /home/amitkumarx86/workspace/taxiapp/pom.xml
+2016-07-27 23:07:04,772 [Worker-10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.2/maven-war-plugin-2.2.jar
+2016-07-27 23:07:05,859 [Worker-10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.2/maven-war-plugin-2.2.jar
+2016-07-27 23:07:06,775 [Worker-10] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.amit.taxi:taxiapp:0.0.1-SNAPSHOT @ /home/amitkumarx86/workspace/taxiapp/pom.xml.
+2016-07-27 23:07:06,873 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-servlet:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:07:06,905 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-json:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:07:08,668 [Worker-10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/junit/junit/4.8.2/junit-4.8.2.pom
+2016-07-27 23:07:08,959 [Worker-10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/junit/junit/4.8.2/junit-4.8.2.pom
+2016-07-27 23:07:08,975 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-client:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:07:09,289 [Worker-10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/glassfish/extras/glassfish-embedded-web/3.1.1/glassfish-embedded-web-3.1.1.pom
+2016-07-27 23:07:09,591 [Worker-10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/glassfish/extras/glassfish-embedded-web/3.1.1/glassfish-embedded-web-3.1.1.pom
+2016-07-27 23:07:09,937 [Worker-10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/glassfish/extras/extras/3.1.1/extras-3.1.1.pom
+2016-07-27 23:07:10,183 [Worker-10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/glassfish/extras/extras/3.1.1/extras-3.1.1.pom
+2016-07-27 23:07:11,056 [Worker-10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/glassfish/glassfish-parent/3.1.1/glassfish-parent-3.1.1.pom
+2016-07-27 23:07:11,944 [Worker-10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/glassfish/glassfish-parent/3.1.1/glassfish-parent-3.1.1.pom
+2016-07-27 23:07:12,270 [Worker-10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/glassfish/pom/8/pom-8.pom
+2016-07-27 23:07:12,511 [Worker-10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/glassfish/pom/8/pom-8.pom
+2016-07-27 23:07:12,850 [Worker-10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/junit/junit/4.8.2/junit-4.8.2.jar
+2016-07-27 23:07:14,195 [Worker-10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/junit/junit/4.8.2/junit-4.8.2.jar
+2016-07-27 23:07:15,000 [Worker-10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/glassfish/extras/glassfish-embedded-web/3.1.1/glassfish-embedded-web-3.1.1.jar
+2016-07-27 23:07:23,625 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-servlet:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:07:23,626 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-json:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:07:23,630 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-client:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:07:26,567 [Worker-20] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/glassfish/extras/glassfish-embedded-web/3.1.1/glassfish-embedded-web-3.1.1.jar
+2016-07-27 23:08:17,460 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-servlet:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:08:17,461 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-json:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:08:17,465 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-client:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:08:26,326 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/glassfish/extras/glassfish-embedded-web/3.1.1/glassfish-embedded-web-3.1.1.jar
+2016-07-27 23:08:40,268 [Worker-20] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/glassfish/extras/glassfish-embedded-web/3.1.1/glassfish-embedded-web-3.1.1.jar
+2016-07-27 23:10:38,361 [Worker-10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/glassfish/extras/glassfish-embedded-web/3.1.1/glassfish-embedded-web-3.1.1.jar
+2016-07-27 23:10:39,176 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/glassfish/extras/glassfish-embedded-web/3.1.1/glassfish-embedded-web-3.1.1.jar
+2016-07-27 23:10:39,321 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-servlet:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:10:39,330 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-json:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:10:39,340 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-client:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:10:41,201 [Worker-20] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/glassfish/extras/glassfish-embedded-web/3.1.1/glassfish-embedded-web-3.1.1.jar
+2016-07-27 23:10:41,218 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-servlet:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:10:41,223 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-json:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:10:41,229 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-client:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:10:44,252 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-servlet:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:10:44,254 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-json:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-27 23:10:44,257 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.jersey:jersey-client:jar:1.20-SNAPSHOT is missing, no dependency information available
+2016-07-31 14:34:24,588 [Worker-4] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-08-02 01:17:35,996 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-08-06 13:38:16,149 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-08-09 19:49:20,427 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-08-15 23:07:17,773 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-08-17 22:40:27,688 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-08-21 11:07:35,375 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-08-23 02:31:59,383 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-08-23 02:32:01,298 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Updating Gradle version information cache failed. Using outdated cache.
+2016-08-23 19:37:26,748 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-08-25 23:07:16,812 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-08-28 12:38:44,125 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-08-29 19:41:00,868 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-08-30 22:09:39,880 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-09-02 23:35:32,199 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-09-04 19:41:53,931 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-09-05 17:54:22,168 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2016-09-06 09:41:55,740 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-09-06 17:20:53,809 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

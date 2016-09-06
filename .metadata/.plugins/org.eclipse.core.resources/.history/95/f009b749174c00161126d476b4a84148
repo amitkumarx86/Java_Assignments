@@ -1,0 +1,28 @@
+package Algorithms;
+
+import java.util.Scanner;
+
+public class Solution2 {
+	 public static void main(String[] args) {
+	        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+	        Scanner reader = new Scanner(System.in);
+	        //int t = reader.nextInt();
+	        //reader.nextLine();
+	        String s1 = "acxz";
+	        String s2 = "bcxz";
+	        System.out.println(Check(s1));
+	        System.out.println(Check(s2));
+	    }
+	    public static String Check(String s){
+	    	String reverse = new StringBuffer(s).reverse().toString();
+	    	String flag = "Funny";
+	        for(int i=1;i < s.length();i++){
+	            if(!((Math.abs((int)s.charAt(i) - (int) s.charAt(i-1))) == (Math.abs((int)reverse.charAt(i) - (int) reverse.charAt(i-1))))){
+	            	flag = "Not Funny";
+	            	break;
+	            }
+	        }
+			return flag;
+	        
+	    }
+}

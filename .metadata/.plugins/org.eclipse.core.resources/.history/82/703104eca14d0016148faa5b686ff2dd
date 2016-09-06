@@ -1,0 +1,14 @@
+package JsonParser;
+
+import java.io.File;
+
+public class Token {
+	String token;
+	int type;
+	
+	public static void main(String[] args) {
+		Tokeniser t =  new Tokeniser(new File("/home/amitkumarx86/Downloads/json"));
+		t.readFile();
+	}
+
+}

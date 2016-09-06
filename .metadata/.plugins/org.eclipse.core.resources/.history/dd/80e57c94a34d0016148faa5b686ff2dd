@@ -1,0 +1,62 @@
+package JsonParser;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Tokeniser {
+	File path;
+	public Tokeniser(File f){
+		this.path = f;
+	}
+	public void readFile() throws FileNotFoundException{
+		String content = new Scanner(path).useDelimiter("\\Z").next();
+		//System.out.println(content);
+		Token t = new Token();
+		t = getNextToken(content);
+	}
+	public Token getNextToken(String content){
+		int tCount=0;
+		char token;
+	    while(true){
+	    	token = content.charAt(0);
+	    	switch(token){
+	        case '{':
+	        	Token t = new Token(""+token,1);
+	        	tCount++;
+	        	return t;
+	        	
+	        case '}':
+	        	System.out.println("Token is 2");
+	        	tCount++;
+	        	break;
+	        case '[':
+	        	System.out.println("Token is 3");
+	        	tCount++;
+	        	break;
+	        case ']':
+	        	System.out.println("Token is 4");
+	        	tCount++;
+	        	break;
+	        case ',':
+	        	System.out.println("Token is 5");
+	        	tCount++;
+	        	break;
+	        case '\\':
+	        	System.out.println("Token is 5");
+	        	tCount++;
+	        	break;
+	        default :
+	        	tCount++;
+	        	System.out.println("Token is alphabet");
+	        }
+	}
+	 
+	
+	    }
+	}
+	
+

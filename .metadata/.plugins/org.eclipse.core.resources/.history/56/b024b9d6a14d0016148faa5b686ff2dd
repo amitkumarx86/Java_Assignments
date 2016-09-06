@@ -1,0 +1,6 @@
+package JsonParser;
+
+public class Token {
+	String token;
+	int type;
+}

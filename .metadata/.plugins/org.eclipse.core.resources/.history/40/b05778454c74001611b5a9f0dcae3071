@@ -1,0 +1,28 @@
+package Heap;
+
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+ 
+
+public class HeapAssignment_1 {
+    public static void main(String[] args) throws IOException {
+	createNumber();
+    }
+    static void createNumber() throws IOException{
+	DataInputStream reader = new DataInputStream(new FileInputStream("/home/amitkumarx86/Desktop/headNumber.txt"));
+	DataOutputStream writer = new DataOutputStream(new FileOutputStream("/home/amitkumarx86/Desktop/headNumber.txt"));
+	for(int i=0;i<10000000;i++){
+	    int t = (int)(Math.random()*100);
+	}
+	while(reader.available()>0)
+        {
+	    System.out.println(reader.readInt());
+        }
+	reader.close();
+	writer.close();
+   }
+}

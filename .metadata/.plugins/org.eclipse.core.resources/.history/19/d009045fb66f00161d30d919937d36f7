@@ -1,0 +1,28 @@
+package sorting;
+
+public class RadixSort {
+    public static void main(String[] args) {
+	int[] ar= {124,560,670,789,528,154,111};
+	radixSort(ar);
+    }
+    public static void radixSort(int[] ar){
+	int k=1,l=0;
+	while(k-- > 0){
+	    
+	    for(int i=1;i<ar.length;i++){
+		int j=i-1,key=((ar[i]/((int)Math.pow(10,l++))))%10;
+		int keyelem=ar[i];
+		System.out.println("key :"+key);
+		while(j>=0 && ((ar[j]/((int)Math.pow(10, i))))%10 > key){
+		    
+		    ar[j+1]=ar[j];
+		    j--;
+		}
+		ar[j+1]=keyelem;
+	    }
+	}
+	for(int a:ar) System.out.println(a);
+    }
+}
+    
+

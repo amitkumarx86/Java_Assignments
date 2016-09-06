@@ -1,0 +1,29 @@
+package JsonParser;
+
+import java.awt.image.BufferedImageFilter;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class JsonParser {
+public static void main(String[] args) throws IOException {
+	File dir = new File("/home/amitkumarx86/Downloads/json.txt");
+	readFile(dir);
+}
+
+private static void readFile(File fin) throws IOException {
+	// Construct BufferedReader from FileReader
+	BufferedReader br = new BufferedReader(new FileReader(fin));
+ 
+	String line = null;
+	while ((line = br.readLine()) != null) {
+		System.out.println(line);
+		if(line == "{"){
+			
+		}
+	}
+ 
+	br.close();
+}
+}

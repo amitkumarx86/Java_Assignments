@@ -1,0 +1,65 @@
+package Algorithms;
+
+public class NumbersfromOnetoK {
+    public static void main(String[] args) {
+	NumbersfromOnetoK m = new NumbersfromOnetoK();
+	m.findSubArrayWith_1_to_K_Numbers();
+    }
+    private void findSubArrayWith_1_to_K_Numbers(){
+	int[] arr={1,2,10,6,3,1,2,7,6,4,2,8,6,1,7,3,1,2,3,7,7,7,7,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7};
+	int k=4,strtInd=0,endInd=0,digCount=0;
+	int[] kArr=new int[k+1];
+
+	/*
+	 * First find the subarray in which 1 to k number exist, it may 
+	 * not be the minimal then we will try to minimize it
+	 * */
+	for(int i=0;i<arr.length;i++){
+	    if(arr[i] <=k && arr[i] >=1){
+		if(kArr[arr[i]]==0) digCount++;
+		kArr[arr[i]]++;
+		if(digCount == k) {endInd=i;break;}
+	    }
+	}
+	int i=0,tempEnd=endInd+1;
+	int strtTrack=0;
+	while(i<tempEnd && (i< arr.length || tempEnd < arr.length)){
+	    //System.out.println("i="+i+" and tempEnd="+tempEnd+" arr[i]="+arr[i]+" arr[tempEnd]=");
+	    if(arr[i] <=k && arr[i] >=1){
+		kArr[arr[i]]--; // first decrement count
+		
+		//printArray(kArr);
+		// if count is becoming 0 then just increment the tempEnd location in right
+		if(kArr[arr[i]] == 0) {
+		    kArr[arr[i]]++;
+		    //strtTrack--;
+		    if(tempEnd < arr.length)	
+			    strtTrack=i;
+		    if(tempEnd < arr.length && arr[tempEnd] <=k && arr[tempEnd] >=1 ) 
+			kArr[arr[tempEnd++]]++;
+		    else if(tempEnd >= arr.length) i++;
+		    else{
+			tempEnd++;
+			
+		    }
+		    //printArray(kArr);
+		}
+		else {i++;
+		strtTrack=i;
+		} // if count is not 0 then increment i
+	    }// this condition tell number should be between 1 and k
+	    else i++;
+	}
+	System.out.println(strtTrack+" "+(tempEnd-1));
+	if(((tempEnd-1)-strtTrack) < (endInd - strtInd)){
+	    System.out.println(strtTrack+" "+(tempEnd-1));
+	}
+	else
+	    System.out.println(strtInd+" "+(endInd));
+	//printArray(kArr);
+    }
+    private void printArray(int[] arr){
+	for(int a : arr) System.out.print(a+" ");
+	System.out.println();
+    }
+}

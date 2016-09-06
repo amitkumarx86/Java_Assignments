@@ -1,0 +1,20 @@
+package Heap;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class HeapAssignment_1 {
+    public static void main(String[] args) throws IOException {
+	createNumber();
+    }
+    static void createNumber() throws IOException{
+	BufferedWriter writer = new BufferedWriter( new FileWriter("/home/amitkumarx86/Desktop/headNumber.txt"));
+	for(long i=0;i<10000000;i++){
+	    for(int j=0;j<1000;j++)
+		writer.write((int) (Math.random()*100));
+	}
+	// do stuff 
+	writer.close();
+    }
+}

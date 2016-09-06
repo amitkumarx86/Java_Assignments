@@ -1,0 +1,96 @@
+package Tokeniser;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import Parser.JsonObject;
+
+public class Token {
+	String token;
+	int type;
+	static ArrayList<JsonObject> jsonObject = new ArrayList<JsonObject>();
+	static Map<Object,Object> map = new HashMap<Object,Object>();
+	
+	static Tokeniser tokeniser;
+	Token(String token, int type){
+		this.token=token;
+		this.type=type;
+	}
+	public Token(){}
+	public String toString(){
+		
+		String s = this.token + "" + this.type;
+		return s;
+	}
+	
+	public static void main(String[] args) throws UnsupportedEncodingException, IOException, Exception {
+		String path = "/home/amitkumarx86/Downloads/json";
+		tokeniser =  new Tokeniser(path);
+		String content = tokeniser.readFile();
+		parser(content);
+	}
+	
+	public static void parser(String content) throws UnsupportedEncodingException, IOException, Exception{
+		int nextToken=0;
+		int counter=0;
+		Object value=null,key = null;
+		while(true){
+		        Token t = new Token();
+		        t = tokeniser.getNextToken(content);
+		    	if(t != null){
+        		    	if(t.type == 11) continue;
+        		    	if(t.type == 1){
+        		    	    key = getKey(content);
+                		    System.out.println(key);
+                		}
+            			if(t.type == 6){
+                		     value = getValue(content);
+                		}
+            			map.put(key, value); // adding values to hashmap
+        		}
+        		else
+        		    break; // string finished
+		}
+		
+	}
+	public static String getKey(String content) throws Exception{
+	    String key = "";
+	    Token t = new Token() ;
+	    t = tokeniser.getNextToken(content);
+	    
+	    while(t.type == 11 || t.type == 8 || t.type == 9){
+		t = tokeniser.getNextToken(content);
+	    }
+	    
+	    if(t.type == 7){  // 3 is for "
+		t = tokeniser.getNextToken(content);
+		while(t.type != 7){
+		    if(t.type == 11 || t.type == 9 || t.type == 8) {
+			t = tokeniser.getNextToken(content);
+			continue;
+		    }
+		    key += t.token;
+		    t = tokeniser.getNextToken(content);
+		    if(t.type == 6){
+			throw new Exception("\" is expected");
+		    }
+		    //System.out.println(t.token);
+		}
+	    }
+	    
+	    return  key;
+	    
+	}
+	public static Object getValue(String content) throws Exception{
+	    Token t = new Token();
+	    t = tokeniser.getNextToken(content);
+	    if(t.type == 1){
+		parser(content);
+	    }
+	    Object value = null;
+	    return value;
+	}
+}

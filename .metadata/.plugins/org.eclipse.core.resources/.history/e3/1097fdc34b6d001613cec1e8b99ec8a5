@@ -1,0 +1,33 @@
+package Algorithms;
+
+import java.util.ArrayList;
+
+public class MaxSubArray{
+    public static void main(String[] args) {
+	int[] arr = {5,6,2,3,4,-16,1,-53,-22,10,10,10};
+	int max=0,sum=0,l=4,len=0;
+	for(int i=0;i<arr.length;i++){
+	    sum +=arr[i];
+	    len=len+1;
+	    if(len > l) {sum=0;continue;}
+	    if(sum > max) {max = sum;}
+	    if(sum < 0) sum=0;
+	}
+	System.out.println(max);
+	ArrayList<Integer> ar = new ArrayList<Integer>();
+	sum=0;
+	for(int i=0;i<arr.length;i++){
+	    ar.add(arr[i]);
+	    sum +=arr[i];
+	    if(sum == max) {
+		break;
+	    }
+	    if(sum < 0) {
+		sum=0;
+	    	ar.clear();
+	    }
+	}
+	System.out.println("Sum of Max Sub Array="+max);
+	System.out.println(ar);
+    }
+}

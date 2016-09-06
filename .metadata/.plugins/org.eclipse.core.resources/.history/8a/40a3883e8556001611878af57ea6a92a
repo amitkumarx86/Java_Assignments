@@ -1,0 +1,40 @@
+package Tokeniser;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+
+import Parser.JsonObject;
+
+public class Token {
+	String token;
+	int type;
+	static ArrayList<JsonObject> jsonObject = new ArrayList<JsonObject>();
+	
+	Token(String token, int type){
+		this.token=token;
+		this.type=type;
+	}
+	
+	public String toString(){
+		
+		String s = this.token + "" + this.type;
+		return s;
+	}
+	
+	public static void main(String[] args) throws UnsupportedEncodingException, IOException {
+		String path = "/home/amitkumarx86/Downloads/json";
+		Tokeniser tokeniser =  new Tokeniser(path);
+		String content = tokeniser.readFile();
+		parser(content);
+	}
+	
+	public static void parser(String content) throws UnsupportedEncodingException, IOException{
+		
+		
+		int nextToken=0;
+		int counter=0;
+		String value,key = null;
+		
+	}
+}

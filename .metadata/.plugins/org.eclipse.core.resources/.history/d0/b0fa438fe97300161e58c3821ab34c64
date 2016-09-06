@@ -1,0 +1,13 @@
+package Trees;
+
+public class HeightOfTree {
+    int TreeHeight(Node head){
+	if(head == null)
+	    return 0;
+	if(head.right == null && head.left==null)
+	    return 0;
+	
+	return 1+max(TreeHeight(head.left)+TreeHeight(head.right));
+    }
+    int max(int a,int b){if(a>b) return a; else return b;}
+}

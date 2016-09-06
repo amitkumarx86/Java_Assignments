@@ -1,0 +1,55 @@
+package Algorithms;
+
+import java.util.Scanner;
+
+public class NonDivisibleSubset {
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner read = new Scanner(System.in);
+        int N = 6;//read.nextInt();
+        int K = 9;//read.nextInt();
+        long[] arr = {422346306, 940894801, 696810740, 862741861, 85835055, 313720373};
+        long[] bucket = new long[K];
+        for(int i=0;i< K;i++)
+            bucket[i]=-1;
+        for(int i=0; i< N ;i++){
+            //arr[i] = read.nextLong();
+            //System.out.println("arr[i] = "+ arr[i] + " " + (int )arr[i]%K);
+            bucket[(int)arr[i]%K] = bucket[(int)arr[i]%K] + 1;
+        }
+        for(int i=0;i< K;i++){
+            System.out.println(bucket[i]);
+        }
+        long max = bucket[0];
+        
+        int index=0;
+        for(int i=0; i< K ;i++){
+            if(max < bucket[i]){
+        	index = i;
+        	max = bucket[i];
+            }
+        }
+        for(int i=0;i< K;i++){
+            System.out.println(bucket[i]);
+        }
+        int count=0;
+        for(int i=0; i< K ;i++){
+            if(max == bucket[i])
+                count += max;
+                bucket[i] = -1;
+        }
+        
+        for(int i=0; i< K ;i++){
+            if(i+index % K !=0 && bucket[i] != -1){
+        	count = count + (int)bucket[i];
+            }
+        }
+        
+        
+        System.out.println(count);
+        
+        
+        
+        read.close();
+    }
+}

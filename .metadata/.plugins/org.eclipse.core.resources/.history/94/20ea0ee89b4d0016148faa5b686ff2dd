@@ -1,0 +1,19 @@
+package JsonParser;
+
+public class JsonParser {
+public static void main(String[] args) {
+	
+}
+
+private static void readFile2(File fin) throws IOException {
+	// Construct BufferedReader from FileReader
+	BufferedReader br = new BufferedReader(new FileReader(fin));
+ 
+	String line = null;
+	while ((line = br.readLine()) != null) {
+		System.out.println(line);
+	}
+ 
+	br.close();
+}
+}

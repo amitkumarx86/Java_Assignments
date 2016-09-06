@@ -1,0 +1,148 @@
+package QuickSort;
+
+import java.util.Arrays;
+
+public class RandMizedQuickSortVersion1 {
+    
+    
+    public void qSort(int[] a, int l, int r)
+    {
+         if(l<r){
+            //int p = Pivot(l,r);
+            //int k = Partition(a,l,r,p);
+            System.out.println(" l="+l+" r="+r);
+            int k = FindRankDeterministic(a,l,r);
+            System.out.println("After partition k="+k);
+            printArray(a);
+            qSort(a, l, k-1);
+            qSort(a, k+1, r);
+         }
+     }
+     public int FindRankRandom(int[] a,int i, int j, int r){
+	 int p = Pivot(i,j);
+	 int k = Partition(a, i, j, p);
+	 if( r == j-k+1)
+	     return k;
+	 else if(r < j-k+1)
+	     return FindRankRandom(a, k+1, j, r);
+	 else
+	     return FindRankRandom(a, i, k, r-j+k);
+	}
+     public int FindRankDeterministic(int[] a,int i, int j){
+	 int p = goodPivot(a,i,j);
+	 //System.out.println("p="+p);
+	 int k = Partition(a, i, j, p);
+	 return k;
+	}
+     private  int Pivot(int minimum,int maximum){
+	return (minimum + (int)(Math.random()*(maximum - minimum))); 
+     }
+     
+     private  int Partition(int[] a, int l, int r,int p)
+     {
+	 a[r] = a[p] + a[r] - (a[p]=a[r]);
+         int x = a[r];
+         int i = l-1;
+         for(int j=l; j<=r-1; j++)
+         {
+             if(a[j]<=x) // use if(a[j] >=x) for non-increasing order 
+             {
+                 i++;a[j]=a[i]+a[j]-(a[i]=a[j]);
+             }	
+         }
+         a[i+1] = a[r] + a[i+1] - (a[r] = a[i+1]);
+         return (++i);
+     }
+     public  int PartitionForPivotAtIndexZero(int[] a, int p, int r)
+     {
+	 System.out.println("func called...");
+         int x = a[0];
+         int i = r+1;
+         System.out.println(" i ="+(i));
+         int temp=0;
+         for(int j=r; j > 0; j--)
+         {
+             if(a[j] >= x) // use if(a[j] >=x) for non-increasing order 
+             {
+                 i--;
+                 temp = a[i];
+                 a[i] = a[j];
+                 a[j] = temp;
+                     
+             }
+         }
+         temp = a[i-1];
+         a[i-1] = a[0];
+         a[0] = temp;
+         for(int a1: a)
+             System.out.print(a1+" ");
+         System.out.println();
+         System.out.println(" i ="+(--i));
+         return (i);
+     }
+     public int goodPivot(int[] a,int i, int j){
+	 System.out.println("---------------"+j);
+	 int noBlocks=(j+1)/5;
+	 int remain = (j+1)%5;
+	 System.out.println(noBlocks+" "+remain);
+	 for(int k=0;k<noBlocks;k++){
+	     int[] temp = new int[5];
+	     for(int l=k*5,ind=0;l<(k*5+5);l++,ind++) temp[ind]=a[l];
+	     Arrays.sort(temp);
+	     for(int l=k*5,ind=0;l<(k*5+5);l++,ind++) a[l]=temp[ind];
+	 }
+	 printArray(a);
+	 if(remain > 0){
+	     int[] temp = new int[remain];
+	     for(int l=i*noBlocks;l<=j;l++) temp[l]=a[l];
+	     Arrays.sort(temp);
+	     printArray(temp);
+	     for(int l=i*noBlocks;l<=j;l++) a[l]=temp[l];	
+	 }
+	 int loc=0;
+	 for(int k=0,n=0;n<noBlocks;n++,k=n*5,loc++){
+	     
+	     a[loc] = a[(2*k+5)/2] + a[loc]- (a[(2*k+5)/2] = a[loc]);
+	     System.out.println((2*k+5)/2);
+	 }
+	 
+	 if(remain > 0){
+	     loc++;
+	     a[loc] = a[(5*noBlocks+j)/2] + a[loc]- (a[(5*noBlocks+j)/2] = a[loc]);	
+	 }
+	 int[] temp = new int[loc+1];
+	 
+	 for(int k=0;k<loc+1;k++) temp[k]=a[k];
+	 Arrays.sort(temp);
+	 for(int k=0;k<loc+1;k++) a[k]=temp[k];    
+	 printArray(a);
+	 
+	 return (loc+1)/2;
+     }
+     public void printArray(int[] a){
+	 for(int i:a) System.out.print(i+" ");
+	 System.out.println();
+     }
+     public static void main(String[] args)
+     {
+         RandMizedQuickSortVersion1 qsort = new RandMizedQuickSortVersion1();
+         int[] array = {5, 4, 7, 2, 1, 9, 3, 6 ,8,10};
+
+         System.out.print("Original  Array : ");
+         for(int i=0; i<array.length;i++)
+         {
+             System.out.print(array[i] + " ");
+         }
+         System.out.println();
+         int length = array.length;
+         
+         qsort.qSort(array, 0, length-1);
+         //int p = qsort.goodPivot(array,0,length-1);
+         //System.out.println("p="+p);
+         System.out.print("Sorted  Array : ");
+         for(int i=0; i<array.length;i++)
+         {
+             System.out.print(array[i] + " ");
+         }
+     }
+}

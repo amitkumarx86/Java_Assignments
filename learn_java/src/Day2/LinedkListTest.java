@@ -17,7 +17,7 @@ class Node {
 
 class LList {
     private Node first;
-
+    
     //LList constructor
     public LList() {
 	    first = null;
@@ -27,7 +27,7 @@ class LList {
     public boolean isEmpty() {
 	    return first == null;
     }
-
+    
     //Inserts a new Link at the first of the list
     public void insertatFirst(String bookName) {
     	Node link = new Node(bookName);
@@ -156,14 +156,6 @@ public class LinedkListTest {
 	    System.out.println(list.size());
 	    list.clear();
 	    System.out.println(list.size());
-	    /*
-	    while(!list.isEmpty()) {
-		    Link deletedLink = list.delete();
-		    System.out.print("deleted: ");
-		    deletedLink.printLink();
-		    System.out.println("");
-	    }
-	    list.printList();
-	    */
+	     
     }
 }
